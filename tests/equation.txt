@@ -1,0 +1,78 @@
+in r0
+in r1
+in r2
+push 0
+pushr r0
+cmp
+pop
+pop
+je lin
+push 4
+pushr r0
+pushr r2
+mul
+mul
+pushr r1
+pushr r1
+mul
+sub
+popr r3
+push 0
+pushr r3
+cmp
+je exit3
+jl exit1
+jmp exit4
+lin:
+push 0
+pushr r1
+cmp
+pop
+pop
+je exit1
+jmp exit2
+exit1:
+end
+exit2:
+pushr r1
+pushr r2
+div
+push 0
+sub
+outtop
+end
+exit3:
+push 2
+pushr r0
+mul
+pushr r1
+div
+push 0
+sub
+outtop
+end
+exit4:
+push 2
+pushr r0
+mul
+pushr r3
+sqrt
+pushr r1
+push 0
+sub
+add
+div
+outtop
+push 2
+pushr r0
+mul
+pushr r3
+sqrt
+pushr r1
+push 0
+sub
+sub
+div
+outtop
+end
+

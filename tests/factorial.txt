@@ -1,0 +1,21 @@
+in r1
+push 1
+push 1
+popr r2
+loop:
+pushr r1
+pushr r2
+cmp
+popr r2
+popr r1
+jbe exit
+pushr r2
+push 1
+add
+popr r2
+pushr r2
+mul
+jmp loop
+exit:
+outtop
+end
