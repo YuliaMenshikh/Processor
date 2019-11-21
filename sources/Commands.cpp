@@ -15,14 +15,13 @@ bool Strcmp(const char* s1, const char* s2)
 
 uint8_t getCode(const char* cmd, int& args, bool& useReg)
 {
-    // Search matched cmd-name
-    for (size_t cmd_index = 0; cmd_index < CNT_COMMANDS; ++cmd_index)
+    for (size_t ind = 0; ind < CNT_COMMANDS; ++ind)
     {
-        if (Strcmp(cmd, commands[cmd_index].name))
+        if (Strcmp(cmd, commands[ind].name))
         {
-            args = commands[cmd_index].args;
-            useReg = commands[cmd_index].use_reg;
-            return (uint8_t)commands[cmd_index].code;
+            args = commands[ind].args;
+            useReg = commands[ind].use_reg;
+            return (uint8_t)commands[ind].code;
         }
     }
     return -1;
@@ -30,11 +29,11 @@ uint8_t getCode(const char* cmd, int& args, bool& useReg)
 
 int32_t getReg(const char* reg)
 {
-    for (size_t reg_index = 0; reg_index < CNT_REGISTRES; ++reg_index)
+    for (size_t ind = 0; ind < CNT_REGISTRES; ++ind)
     {
-        if (Strcmp(reg, registres[reg_index].name))
+        if (Strcmp(reg, registres[ind].name))
         {
-            return (int32_t)registres[reg_index].number;
+            return (int32_t)registres[ind].number;
         }
     }
     return -1;
